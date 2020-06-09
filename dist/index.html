@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>To Do</title>
+</head>
+<body>
+    <header>
+        <h1 id="page-title">// TODO:</h1>
+    </header>
+    
+    <main>
+        <section id="categories-left-sidebar">
+            <div id="add-category" class="categories">Add new category...</div>
+            <ul id="categories-list">
+                <li id="default-category" class="categories">Default Project</li>
+            </ul>
+        </section>
+
+        <section id="to-do-list">
+            <h2 id="current-project-title">Default Project <button id="edit-project" class="material-icons icon-button">edit</button> <button id="delete-project" class="material-icons icon-button">delete_outline</button></h2>
+            
+            <button id="add-toDo-button" class="icon-button" alt="Add to do">+</button>
+
+            <ul id="tasks-list">
+                <li class="task">
+                    <button class="task-is-done"></button>
+                    <button class="todo-control material-icons icon-button star-task">star_border</button>
+                    <h3 class="toDo-title">Title 1</h3>
+                    <button class="todo-control material-icons icon-button">expand_more</button>
+                    <button class="todo-control material-icons icon-button">edit</button>
+                    <button class="todo-control material-icons icon-button">delete_outline</button>
+                </li>
+            </ul>
+
+        </section>
+
+    </main>
+</body>
+</html>

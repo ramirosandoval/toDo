@@ -1,0 +1,110 @@
+body{
+    font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+}
+
+header{
+    align-items: center;
+    background-color: #202020;
+    color: #1DF915;
+    display: flex;
+    text-indent: 1em;
+    height: 9vh;
+}
+
+#page-title{
+    font-size: 1.5em;
+}
+
+main{
+    display: flex;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+#categories-left-sidebar{
+    border-right: 1px solid rgb(224, 224, 224);
+    height: 100vh;
+    width: 25vw;
+}
+
+#to-do-list{
+    width: 75vw;
+    padding: 4.25% 2%;
+}
+
+#current-project-title{
+    font-size: xx-large;
+}
+
+#edit-project, #delete-project{
+    margin-left: 1vw;
+}
+
+#edit-project:hover, #delete-project:hover, .star-task:hover{
+    color: black;
+    cursor: pointer;
+}
+
+#add-toDo-button{
+    font-size: 45px;
+    line-height: 42.5px;
+    transition: .4s;
+    margin-top: 2%;
+    color: black;
+}
+
+#add-toDo-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transform: rotate(90deg);
+}
+
+#tasks-list{
+    align-items: center;
+}
+
+.star-task{
+    margin-left: 1%;
+}
+
+.icon-button{
+    color: rgba(0, 0, 0, 0.250);
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    outline: none;
+    height: fit-content;
+    width: fit-content;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.categories{
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 5%;
+}
+
+.task{
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    margin-top: 2.5%;
+    padding-bottom: 1%;
+    width: 100vw;
+}
+
+.task-is-done{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10%;
+    margin-left: 0.25%;
+    height: 3.25vh;
+    width: 1.5vw;
+}
+
+.toDo-title{
+    margin-left: .5vw;
+    margin-top: .75vh;
+    width: 55vw;
+}
