@@ -2,7 +2,7 @@ body{
     font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
 }
 
-header{
+#page-header{
     align-items: center;
     background-color: #202020;
     color: #1DF915;
@@ -11,28 +11,66 @@ header{
     height: 9vh;
 }
 
-#page-title{
-    font-size: 1.5em;
-}
-
 main{
     display: flex;
 }
 
 section{
-    display: flex;
     flex-direction: column;
+}
+
+ul{
+    display: flex;
+}
+
+#add-task-hidden-form-section, #hidden-edit-form-section, #hidden-new-category-form{
+    background-color: rgba(0, 0, 0, 0.600);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.title-input, .comment-textarea{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    outline: none;
+    resize: none;
+}
+
+.title-input::placeholder, #comment-textarea::placeholder{
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.title-input{
+    border-bottom: 1px rgba(255, 255, 255, 0.4) solid;
+    margin: 5% auto 25% auto;
+}
+
+#form-buttons-list{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5%;
+}
+
+#add-element{
+    margin-left: 30%;
+}
+
+#prototype{
+    display: none;
+}
+
+#page-title{
+    font-size: 1.5em;
 }
 
 #categories-left-sidebar{
     border-right: 1px solid rgb(224, 224, 224);
     height: 100vh;
     width: 25vw;
-}
-
-#to-do-list{
-    width: 75vw;
-    padding: 4.25% 2%;
 }
 
 #current-project-title{
@@ -43,17 +81,13 @@ section{
     margin-left: 1vw;
 }
 
-#edit-project:hover, #delete-project:hover, .star-task:hover{
-    color: black;
-    cursor: pointer;
-}
-
 #add-toDo-button{
     font-size: 45px;
     line-height: 42.5px;
     transition: .4s;
     margin-top: 2%;
     color: black;
+    grid-row: 2;
 }
 
 #add-toDo-button:hover{
@@ -63,7 +97,113 @@ section{
 }
 
 #tasks-list{
+    display: flex;
+    flex-direction: column;
+    grid-row: 3;
+    grid-column: 1/5;
+}
+
+#add-category{
+    border-bottom: 1px solid rgb(224, 224, 224);
+    color: #757575;
+    padding: 5%;
+    cursor: pointer;
+    width: auto;
+}
+
+#categories-list{
+    display: flex;
+    flex-direction: column;
+}
+
+#isDoneSymbol{
+    transition: .25s;
+    cursor: pointer;
+}
+
+#isDoneSymbol:hover{
+    color: rgb(24, 230, 17) !important;
+}
+
+#add-category-container{
     align-items: center;
+    color: white;
+    height: 20vh !important;
+    width: 15vw !important;
+    text-align: center;
+}
+
+#cancel-element-new-category{
+    margin-right: 5% !important;
+}
+
+#add-element-new-category{
+    margin-left: 5% !important;
+}
+
+#form-buttons-list{
+    margin-top: 10%;
+}
+
+#new-category-title-input{
+    max-width: 100%;
+}
+
+#current-project{
+    display: block !important;
+}
+
+#category-selected{
+    border-left: 0.35vw solid black;
+}
+
+.to-do-list{
+    width: 75vw;
+    padding: 4.25% 2%;
+}
+
+.cancel-element{
+    margin-right: 30%;
+}
+
+.add-task-container, #add-category-container{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    margin: 25vh auto;
+    height: 50vh;
+    width: 15vw;
+}
+
+.form-buttons{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    height: 3.5vh;
+    white-space: nowrap;
+}
+
+.comment-textarea{
+    border: 1px rgba(255, 255, 255, 0.4) solid;
+    height: 55%;
+    margin-bottom: 15%;
+}
+
+.task-option-buttons{
+    display: flex;
+    margin-left: 10%;
+    width: 10vw;
+    justify-content: space-between;
+}
+
+.black-when-hovered:hover{
+    color: black;
+    cursor: pointer;
 }
 
 .star-task{
@@ -83,15 +223,29 @@ section{
 .categories{
     border-bottom: 1px solid rgb(224, 224, 224);
     padding: 5%;
+    width: auto;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.categories:hover{
+    border-left: 0.35vw solid black;
+}
+
+.task-container-element{
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.comment-container{
+    display: none;
+    padding: 2% 1%;
 }
 
 .task{
     align-items: center;
     display: flex;
-    border-bottom: 1px solid rgb(224, 224, 224);
     margin-top: 2.5%;
     padding-bottom: 1%;
-    width: 100vw;
 }
 
 .task-is-done{
@@ -101,10 +255,27 @@ section{
     margin-left: 0.25%;
     height: 3.25vh;
     width: 1.5vw;
+    transition: .25s;
+}
+
+.task-is-done:hover{
+    border-color: #1DF915;
+    transition: .25s;
 }
 
 .toDo-title{
     margin-left: .5vw;
     margin-top: .75vh;
     width: 55vw;
+}
+
+.task-is-done:hover{
+    cursor: pointer;
+}
+
+.current-project-header{
+    display: grid;
+    grid-template-columns: 35% 65%;
+    align-items: center;
+    row-gap: 5%;
 }

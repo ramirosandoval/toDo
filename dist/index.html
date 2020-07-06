@@ -9,36 +9,175 @@
     <title>To Do</title>
 </head>
 <body>
-    <header>
+
+    <section id="add-task-hidden-form-section" style="display: none;">
+        <div class="add-task-container">
+            <input type="text" maxlength="50" placeholder="Task title" class="title-input">
+            <textarea name="comment" class="comment-textarea" cols="5" rows="40" placeholder="Task comment here"></textarea>
+            
+            <ul id="form-buttons-list">
+                <li class="cancel-element">
+                    <button class="form-buttons" id="cancel-form-button">Cancel</button>
+                </li>
+                
+                <li class="add-element">
+                    <button class="form-buttons" id="add-task-form-button">Add task</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="hidden-edit-form-section" style="display: none;">
+        <div class="add-task-container">
+            <input type="text" maxlength="50" placeholder="Task title" class="title-input">
+            <textarea name="comment" class="comment-textarea" cols="5" rows="40" placeholder="Task comment here"></textarea>
+            
+            <ul id="form-buttons-list">
+                <li class="cancel-element">
+                    <button class="form-buttons" id="cancel-edit-form-button">Cancel</button>
+                </li>
+                
+                <li class="add-element">
+                    <button class="form-buttons" id="edit-task-form-button">Edit task</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="hidden-new-category-form" style="display: none;">
+        <div id="add-category-container">
+
+            <input type="text" maxlength="50" placeholder="Category title" class="title-input" id="new-category-title-input">
+            
+            <ul id="form-buttons-list">
+                <li id="cancel-element-new-category">
+                    <button class="form-buttons" id="cancel-new-category-form-button">Cancel</button>
+                </li>
+                
+                <li id="add-element-new-category">
+                    <button class="form-buttons" id="create-new-category-form-button">Create category</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="to-do-list prototype-to-do" style="display: none;">
+
+        <header class="current-project-header">
+            <h2 id="current-project-title">Default Project</h2>
+
+            <ul id="project-buttons-list">
+                <button id="edit-project" class="material-icons icon-button black-when-hovered project-buttons">edit</button>
+                <button id="delete-project" class="material-icons icon-button black-when-hovered project-buttons">delete_outline</button>
+            </ul>
+            
+            
+            <button id="add-toDo-button" class="icon-button" alt="Add to do">+</button>
+        </header>
+
+        <ul id="tasks-list">
+
+        </ul>
+    </section>
+
+    <li class="task-container-element" id="prototype-task" style="display: none;">
+        <div class="task">
+
+            <span class="material-icons" style="display: none; color: #1DF915;" id="isDoneSymbol">done</span>
+            
+            <button class="task-is-done"></button>
+
+            <button class="todo-control material-icons icon-button black-when-hovered star-task">star_border</button>
+            <h3 class="toDo-title">Title 1</h3>
+
+            <ul class="task-option-buttons">
+                <li class="expand-option">
+                    <button class=" expand-button hidden todo-control material-icons icon-button black-when-hovered" id="expand-button">expand_more</button>
+                </li>
+
+                <li class="edit-option">
+                    <button class="todo-control material-icons icon-button black-when-hovered">edit</button>
+                </li>
+
+                <li class="delete-option">
+                    <button class="todo-control material-icons icon-button black-when-hovered" id="delete-button">delete_outline</button>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="comment-container" style="display: none;">
+            <p class="task-comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, praesentium!</p>
+        </div>
+    </li>
+
+    <li class="categories prototype-category-list-element" id="category-selected" style="display: none;">New category</li>
+
+    <header id="page-header">
         <h1 id="page-title">// TODO:</h1>
     </header>
     
-    <main>
+    <main id="main-container">
+
         <section id="categories-left-sidebar">
-            <div id="add-category" class="categories">Add new category...</div>
+            <div id="add-category">Add new category</div>
             <ul id="categories-list">
-                <li id="default-category" class="categories">Default Project</li>
+                <li class="categories" id="category-selected">Default Project</li>
             </ul>
         </section>
 
-        <section id="to-do-list">
-            <h2 id="current-project-title">Default Project <button id="edit-project" class="material-icons icon-button">edit</button> <button id="delete-project" class="material-icons icon-button">delete_outline</button></h2>
+        <section class="to-do-list" id="current-project">
+
+            <header class="current-project-header">
+                <h2 id="current-project-title">Default Project</h2>
+
+                <ul id="project-buttons-list">
+                    <button id="edit-project" class="material-icons icon-button black-when-hovered project-buttons">edit</button>
+                    <button id="delete-project" class="material-icons icon-button black-when-hovered project-buttons">delete_outline</button>
+                </ul>
+                
+                
+                <button id="add-toDo-button" class="icon-button" alt="Add to do">+</button>
+            </header>
             
-            <button id="add-toDo-button" class="icon-button" alt="Add to do">+</button>
+            
 
             <ul id="tasks-list">
-                <li class="task">
-                    <button class="task-is-done"></button>
-                    <button class="todo-control material-icons icon-button star-task">star_border</button>
-                    <h3 class="toDo-title">Title 1</h3>
-                    <button class="todo-control material-icons icon-button">expand_more</button>
-                    <button class="todo-control material-icons icon-button">edit</button>
-                    <button class="todo-control material-icons icon-button">delete_outline</button>
+                <li class="task-container-element">
+                    <div class="task">
+
+                        <span class="material-icons" style="display: none; color: #1DF915;" id="isDoneSymbol">done</span>
+                        
+                        <button class="task-is-done"></button>
+
+                        <button class="todo-control material-icons icon-button black-when-hovered star-task">star_border</button>
+                        <h3 class="toDo-title">Title 1</h3>
+    
+                        <ul class="task-option-buttons">
+                            <li class="expand-option">
+                                <button class=" expand-button hidden todo-control material-icons icon-button black-when-hovered" id="expand-button">expand_more</button>
+                            </li>
+    
+                            <li class="edit-option">
+                                <button class="todo-control material-icons icon-button black-when-hovered">edit</button>
+                            </li>
+    
+                            <li class="delete-option">
+                                <button class="todo-control material-icons icon-button black-when-hovered" id="delete-button">delete_outline</button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comment-container" style="display: none;">
+                        <p class="task-comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, praesentium!</p>
+                    </div>
                 </li>
+
             </ul>
 
         </section>
 
     </main>
+
 </body>
+    <script src="main.js"></script>
 </html>
